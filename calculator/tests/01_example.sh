@@ -29,3 +29,15 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+#Test 04: Ensure multiplication works
+if [[ $($CALCULATOR 5 '*' 3) -ne 15 ]]; then
+    echo 'ERROR! FIVE TIMES THREE DOES NOT EQUAL 15'
+    exit 1
+fi
+
+#Test 05: Ensure division works
+if [[ $($CALCULATOR 20 / 4) -ne 5 ]]; then
+    echo 'ERROR! Division failed. 20/4 != 5'
+    exit 1
+fi
